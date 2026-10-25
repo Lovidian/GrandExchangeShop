@@ -53,10 +53,6 @@ Using threads and mutex-based synchronization, the program prevents conflicting 
 4. Build and run the application.
 5. Follow the console prompts to browse products, manage your cart, or test concurrent purchases.
 
-## Screenshots
-
-*Screenshots of the application will be added here.*
-
 ## Future Improvements
 
 - Introduce player-to-player trading.
