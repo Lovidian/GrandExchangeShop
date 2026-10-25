@@ -1,68 +1,106 @@
 # Grand Exchange Shopping System
 
-### C++17 | Object-Oriented Programming | Multithreading
+**C++17 | Object-Oriented Programming | Multithreading | Inventory Management**
 
-A console-based shopping application inspired by the Grand Exchange in **Old School RuneScape (OSRS)**.
+## Project Overview
 
-This project was developed to demonstrate object-oriented programming, inheritance, polymorphism, inventory management, multithreading, and error handling using C++.
+The Grand Exchange Shopping System is a console-based C++ application inspired by the Grand Exchange marketplace in *Old School RuneScape (OSRS)*. The project was developed to demonstrate fundamental and advanced programming concepts through a familiar gaming environment.
 
-## Features
+The application simulates an online marketplace where users can browse products, manage shopping carts, and complete purchases using simulated gold pieces (GP). Rather than creating a traditional e-commerce platform, I wanted to incorporate elements from a game I enjoy while exploring how real-world shopping systems manage inventory, customer accounts, and concurrent transactions.
 
-- **Product Catalog:** Browse 28 OSRS-inspired items organized into six categories.
-- **Shopping Cart:** Add products, remove items, update quantities, and calculate totals.
-- **Membership System:** Regular, Premium, and VIP users with different discount privileges.
-- **Simulated Checkout:** Confirm purchases, calculate discounts, and generate order receipts.
-- **Inventory Management:** Track stock quantities and update product availability.
-- **Multithreading:** Simulate multiple customers attempting to purchase limited-stock items simultaneously.
-- **Error Handling:** Validate user inputs and prevent invalid purchases.
+## Key Features
+
+**Product Catalog and Categories**
+
+The marketplace contains 28 OSRS-inspired products organized into six categories: Weapons, Armor & Jewelry, Potions, Food, Resources, and Runes & Ammunition. Each product includes an ID, name, description, price, and available stock quantity.
+
+Users can browse individual categories or view the entire catalog. The system also supports adding, updating, and removing products.
+
+**Shopping Cart Management**
+
+Users can add products to their shopping cart, remove unwanted items, and adjust quantities before purchasing. The application automatically calculates the total price and checks product availability during checkout.
+
+**User Accounts and Membership Privileges**
+
+The system supports three account types using inheritance and polymorphism:
+
+- **Regular:** Standard pricing with no discounts.
+- **Premium:** 5% discount on purchases.
+- **VIP:** 10% discount on purchases.
+
+All account types share common attributes, including a username, email address, shipping address, and shopping cart.
+
+**Checkout and Inventory Management**
+
+The checkout process asks users to confirm their purchase before completing a simulated transaction. Once confirmed, the application applies the appropriate membership discount, updates product quantities, and generates an order receipt.
+
+No real financial transactions are performed.
+
+## Multithreading and Concurrency
+
+One of the most important features of this project is its multithreading demonstration.
+
+In real-world shopping systems, multiple customers may attempt to purchase the same product simultaneously. Without proper synchronization, this could result in inventory discrepancies or overselling.
+
+To demonstrate this challenge, the application simulates two users attempting to purchase limited-stock items concurrently.
+
+I implemented `std::thread` to execute concurrent operations and `std::mutex` to protect shared inventory data. This ensures that inventory updates are synchronized and purchases cannot exceed available stock.
+
+The demonstration highlights the importance of thread safety and maintaining data integrity in applications supporting concurrent users.
+
+## Object-Oriented Design
+
+The application separates responsibilities across several classes:
+
+| Class | Responsibility |
+|---|---|
+| Product | Stores product information and inventory quantities |
+| Catalog | Manages available products and stock |
+| ShoppingCart | Handles selected products and totals |
+| User | Provides shared account attributes and behavior |
+| RegularUser | Implements standard membership privileges |
+| PremiumUser | Implements premium discounts |
+| VIPUser | Implements VIP discounts |
+
+Encapsulation protects class attributes from unauthorized modification, while inheritance and polymorphism reduce duplicated code and support future expansion.
 
 ## Technologies Used
 
 - C++17
 - Microsoft Visual Studio
 - Standard Template Library (STL)
-- `std::thread`
-- `std::mutex`
-- Object-Oriented Programming (OOP)
+- Object-Oriented Programming
+- Multithreading with `std::thread`
+- Synchronization with `std::mutex`
+- Exception handling and input validation
 
-## Object-Oriented Design
+## Installation and Usage
 
-The application uses multiple classes to separate responsibilities:
-
-| Class | Purpose |
-|---|---|
-| Product | Stores item information and stock quantities |
-| Catalog | Manages available products |
-| ShoppingCart | Handles customer selections |
-| User | Base class for customer accounts |
-| RegularUser | Standard customer privileges |
-| PremiumUser | 5% purchase discount |
-| VIPUser | 10% purchase discount |
-
-## Multithreading and Concurrency
-
-The application demonstrates how multiple customers may attempt to purchase the same product simultaneously.
-
-Using threads and mutex-based synchronization, the program prevents conflicting inventory updates and ensures that purchases cannot exceed available stock.
-
-## Running the Project
-
-1. Download or clone the repository.
-2. Open the project in Visual Studio with the Desktop development with C++ workload installed.
-3. Ensure the project uses C++17.
+1. Clone or download this repository.
+2. Open the C++ project in Microsoft Visual Studio.
+3. Ensure the C++17 language standard is enabled.
 4. Build and run the application.
-5. Follow the console prompts to browse products, manage your cart, or test concurrent purchases.
+5. Enter your account information and select a membership type.
+6. Use the console menu to browse products, manage your cart, complete purchases, or test multithreading.
 
-## Future Improvements
+## Future Development
 
-- Introduce player-to-player trading.
-- Implement dynamic Grand Exchange pricing.
-- Save purchase histories.
-- Add persistent inventory storage.
-- Develop a graphical user interface.
+Although the current application provides a functional shopping experience, several features could be introduced in future versions:
 
-## Project Purpose
+- Player-to-player trading and buy/sell offers.
+- Dynamic pricing influenced by supply and demand.
+- Persistent user accounts and purchase histories.
+- Database integration for inventory management.
+- Graphical interface inspired by the actual Grand Exchange.
 
-This project combines my interest in Old School RuneScape with the practical application of C++ programming concepts. It demonstrates how object-oriented design and concurrency control can be used to build a simplified online shopping system.
+## Conclusion
 
-*This is an educational project inspired by OSRS and is not affiliated with Jagex.*
+This project allowed me to combine my interest in Old School RuneScape with practical C++ software development. It strengthened my understanding of object-oriented design, inheritance, encapsulation, error handling, and concurrency.
+
+More importantly, it demonstrated how these concepts work together in a functional application rather than existing as isolated programming exercises.
+
+The Grand Exchange Shopping System serves as a foundation for future development and demonstrates my ability to design, implement, and expand a structured C++ application.
+
+---
+
+*Disclaimer: This is an independent educational project inspired by Old School RuneScape. It is not affiliated with or endorsed by Jagex.*
