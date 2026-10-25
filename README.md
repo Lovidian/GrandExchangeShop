@@ -2,6 +2,8 @@
 
 **C++17 | Object-Oriented Programming | Multithreading | Inventory Management**
 
+## Video Demo: https://www.youtube.com/watch?v=w4CmNIxnirU
+
 ## Project Overview
 
 The Grand Exchange Shopping System is a console-based C++ application inspired by the Grand Exchange marketplace in *Old School RuneScape (OSRS)*. The project was developed to demonstrate fundamental and advanced programming concepts through a familiar gaming environment.
